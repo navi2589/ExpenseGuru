@@ -9,10 +9,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
-@EnableJpaRepositories(basePackages="com.taxconsultant.repository")
-@ComponentScan(basePackages = "com.taxconsultant")
 @EnableSwagger2
-@EntityScan("com.taxconsultant.entites")
 public class ExpenseGuruApplication {
 
 	public static void main(String[] args) {

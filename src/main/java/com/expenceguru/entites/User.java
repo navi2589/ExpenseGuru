@@ -39,6 +39,8 @@ public class User {
 	@Column(name="person_id")
 	private Long personId;
 	
+	@Column(name = "isDeleted")
+	private Boolean isDeleted;
 	
 	@OneToOne(fetch = FetchType.LAZY )
 	@JoinColumn(name="person_id", insertable=false, updatable=false)

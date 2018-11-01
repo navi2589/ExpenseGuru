@@ -22,7 +22,7 @@ public class SpringFoxConfig {
     public Docket apiDocket() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.taxconsultant"))
+                .apis(RequestHandlerSelectors.basePackage("com.expenceguru"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo());
@@ -30,11 +30,11 @@ public class SpringFoxConfig {
 
 	private ApiInfo getApiInfo() {
 	    return new ApiInfo(
-	            "Tax Consultant",
-	            "Tax Consultant",
+	            "Expense Guru",
+	            "Expense Guru",
 	            "v1",
 	            "TERMS OF SERVICE URL",
-	            new Contact("NAME","URL","EMAIL"),
+	            new Contact("Navnath","URL","nath.chinchore@gmail.com"),
 	            "LICENSE",
 	            "LICENSE URL",
 	            Collections.emptyList()

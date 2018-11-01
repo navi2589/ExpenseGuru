@@ -29,6 +29,7 @@ public class MlovType {
 	@Column(name = "value")
 	private String value;
 
+	@Column(name = "isDeleted")
 	private Boolean isDeleted;
 	
 	@CreatedBy

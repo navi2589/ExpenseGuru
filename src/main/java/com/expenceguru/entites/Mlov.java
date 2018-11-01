@@ -39,6 +39,7 @@ public class Mlov {
 	@JoinColumn(name = "mlov_type_id" ,insertable = false ,updatable = false)
 	private MlovType mlovType;
 	
+	@Column(name = "isDeleted")
 	private Boolean isDeleted;
 	
 	@CreatedBy

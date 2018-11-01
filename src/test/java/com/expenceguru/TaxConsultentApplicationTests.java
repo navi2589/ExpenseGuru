@@ -1,4 +1,4 @@
-package com.navnath.recipebook;
+package com.expenceguru;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

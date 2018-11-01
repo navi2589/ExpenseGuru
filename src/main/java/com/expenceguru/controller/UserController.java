@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.expenceguru.entites.User;
@@ -25,16 +26,16 @@ public class UserController {
 	@Autowired 
 	private UserService userService;
 	
-	@RequestMapping(path = "/{userId}",  method = RequestMethod.GET) 
+	@RequestMapping(path = "/{userId}",  method = RequestMethod.GET, produces = {"application/JSON"}) 
 	@ApiOperation("Returns user details for provided user id.")
 	public List<User> getUser(@ApiParam("userId of the user to be obtained. Cannot be empty.") @PathVariable("userId") int userId){
 
 		return userService.getUser(userId ) ;
 	}
 	
-	@RequestMapping(path =  "/add", method = RequestMethod.POST)
+	@RequestMapping(path =  "/add", method = RequestMethod.POST, produces = {"application/JSON"})
 	@ApiOperation("add or update account user with provided details.")
-	public UserPojo addOrUpdateUser(@ApiParam("User information which needs to added or updated") @RequestBody UserPojo user) throws PersonNotFoundException, UserNotFoundException{
+	public @ResponseBody UserPojo addOrUpdateUser(@ApiParam("User information which needs to added or updated") @RequestBody UserPojo user) throws PersonNotFoundException, UserNotFoundException{
 		
 		return userService.addOrUpdateUser(user);
 		

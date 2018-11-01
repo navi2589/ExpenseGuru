@@ -46,6 +46,7 @@ public class Person {
 	@Column(name = "prefix_id")
 	private Long prefoxId;
 	
+	@Column(name = "isDeleted")
 	private Boolean isDeleted;
 	
 	@ManyToOne(fetch= FetchType.LAZY)

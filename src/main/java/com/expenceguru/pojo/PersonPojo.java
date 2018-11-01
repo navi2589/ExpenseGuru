@@ -1,18 +1,21 @@
 package com.expenceguru.pojo;
 
+import java.util.List;
+
 public class PersonPojo {
 	
-	private Long personId;
+	private long personId;
 	private String fname;
 	private String mname;
 	private String lname;
-	private Long prefixId;
-	private Long genderId;
+	private long prefixId;
+	private long genderId;
+	private List<PersonContactPojo> personContacts;
 	
 	public Long getPersonId() {
 		return personId;
 	}
-	public void setPersonId(Long personId) {
+	public void setPersonId(long personId) {
 		this.personId = personId;
 	}
 	public String getFname() {
@@ -36,15 +39,22 @@ public class PersonPojo {
 	public Long getPrefixId() {
 		return prefixId;
 	}
-	public void setPrefixId(Long prefixId) {
+	public void setPrefixId(long prefixId) {
 		this.prefixId = prefixId;
 	}
 	public Long getGenderId() {
 		return genderId;
 	}
+	public List<PersonContactPojo> getPersonContacts() {
+		return personContacts;
+	}
+	public void setPersonContacts(List<PersonContactPojo> personContacts) {
+		this.personContacts = personContacts;
+	}
 	public void setGenderId(Long genderId) {
 		this.genderId = genderId;
 	}
+	
 	
 	
 

@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
@@ -25,11 +27,34 @@ public class PersonContact {
 	@Column(name = "contact_type_id")
 	private long contactTypeId;
 	
-	private boolean isDeleted;
+	@Column(name = "person_id")
+	private long personId;
+	
+	@Column(name = "isDeleted")
+	private Boolean isDeleted;
 	
 	@ManyToOne(fetch = FetchType.LAZY )
 	@JoinColumn(name = "contact_type_id", insertable = false, updatable = false)
 	private Mlov contactType;
+	
+	
+	public PersonContact(long personContactId, String contact, long contactTypeId, boolean isDeleted, long personId) {
+		super();
+		this.personContactId = personContactId;
+		this.contact = contact;
+		this.contactTypeId = contactTypeId;
+		this.isDeleted = isDeleted;
+		this.personId = personId;
+	}
+	
+	public PersonContact() {};
+	public long getPersonId() {
+		return personId;
+	}
+
+	public void setPersonId(long personId)  {
+		this.personId = personId;
+	}
 	
 	public long getPersonContactId() {
 		return personContactId;
